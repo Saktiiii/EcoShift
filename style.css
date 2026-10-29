@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --hijau-gelap: #102820;
+    --hijau-tua: #16352A;
+    --hijau-utama: #217A55;
+    --hijau-muda: #A7F3D0;
+    --teks-utama: #16352A;
+    --teks-sekunder: #475569;
+    --border: #E2E8F0;
+    --bg: #F5F7FA;
+}
+
+html, body, [class*="css"] {
+    font-family: Inter, sans-serif;
+}
+
+/* ---------- AREA UTAMA ---------- */
+.stApp,
+[data-testid="stAppViewContainer"] {
+    background-color: var(--bg) !important;
+    color: var(--teks-utama);
+}
+
+.block-container {
+    padding: 2rem 3rem 3rem;
+    max-width: 1600px;
+}
+
+/* Teks konten utama (tidak menyentuh sidebar & hero) */
+[data-testid="stMain"] h1,
+[data-testid="stMain"] h2,
+[data-testid="stMain"] h3,
+[data-testid="stMain"] h4 {
+    color: var(--teks-utama);
+}
+
+[data-testid="stMain"] p,
+[data-testid="stMain"] label,
+[data-testid="stMain"] [data-testid="stCaptionContainer"] {
+    color: var(--teks-sekunder);
+}
+
+/* ---------- HERO ---------- */
+.hero {
+    background: linear-gradient(115deg, #102820 0%, #205B43 65%, #267653 100%);
+    padding: 30px;
+    border-radius: 22px;
+    margin-bottom: 24px;
+}
+
+[data-testid="stMain"] .hero h1 {
+    color: #FFFFFF !important;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+[data-testid="stMain"] .hero p {
+    color: #D1FAE5 !important;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* ---------- JUDUL SECTION ---------- */
+.section-title {
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--teks-utama);
+    margin: 12px 0 5px;
+}
+
+.section-caption {
+    color: var(--teks-sekunder);
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+/* ---------- KARTU METRIC ---------- */
+[data-testid="stMetric"] {
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.04);
+}
+
+[data-testid="stMetricLabel"],
+[data-testid="stMetricLabel"] p {
+    color: var(--teks-sekunder) !important;
+    font-weight: 700 !important;
+}
+
+[data-testid="stMetricValue"],
+[data-testid="stMetricValue"] div {
+    color: var(--teks-utama) !important;
+    font-weight: 800 !important;
+}
+
+[data-testid="stMetricDelta"],
+[data-testid="stMetricDelta"] div {
+    font-weight: 700 !important;
+}
+
+/* ---------- FORM ---------- */
+div[data-testid="stForm"] {
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+}
+
+/* ---------- ALERT ---------- */
+[data-testid="stAlert"] p,
+[data-testid="stAlert"] div {
+    color: #1E293B !important;
+}
+
+/* ---------- TOMBOL ---------- */
+div.stButton > button,
+[data-testid="stFormSubmitButton"] > button,
+[data-testid="stDownloadButton"] > button {
+    border-radius: 10px;
+    font-weight: 600;
+    min-height: 42px;
+}
+
+/* Teks di dalam tombol mengikuti warna tombol, bukan warna paragraf */
+div.stButton > button p,
+[data-testid="stFormSubmitButton"] > button p,
+[data-testid="stDownloadButton"] > button p {
+    color: inherit !important;
+}
+
+button[kind="primary"],
+button[kind="primaryFormSubmit"] {
+    background-color: var(--hijau-utama) !important;
+    border-color: var(--hijau-utama) !important;
+    color: #FFFFFF !important;
+}
+
+button[kind="primary"]:hover,
+button[kind="primaryFormSubmit"]:hover {
+    background-color: #1B6646 !important;
+    border-color: #1B6646 !important;
+}
+
+button[kind="secondary"],
+button[kind="secondaryFormSubmit"] {
+    background-color: #FFFFFF !important;
+    color: var(--teks-utama) !important;
+    border: 1px solid #CBD5E1 !important;
+}
+
+/* ---------- SIDEBAR ---------- */
+[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #102820 0%, #173D30 100%) !important;
+}
+
+/* Semua teks di sidebar terang */
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3,
+[data-testid="stSidebar"] h4,
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] span,
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] {
+    color: #F0FDF4 !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stCaptionContainer"],
+[data-testid="stSidebar"] [data-testid="stCaptionContainer"] p {
+    color: var(--hijau-muda) !important;
+}
+
+[data-testid="stSidebar"] hr {
+    border-color: rgba(167, 243, 208, 0.25);
+}
+
+/* Input di sidebar: kotak putih -> teks gelap */
+[data-testid="stSidebar"] [data-baseweb="input"],
+[data-testid="stSidebar"] [data-baseweb="base-input"] {
+    background-color: #FFFFFF !important;
+    border-radius: 10px;
+}
+
+[data-testid="stSidebar"] input {
+    color: var(--teks-utama) !important;
+    -webkit-text-fill-color: var(--teks-utama) !important;
+    background-color: #FFFFFF !important;
+}
+
+[data-testid="stSidebar"] [data-baseweb="input"] button,
+[data-testid="stSidebar"] [data-baseweb="input"] button svg {
+    color: var(--teks-utama) !important;
+    fill: var(--teks-utama) !important;
+}
+
+/* Radio navigasi */
+[data-testid="stSidebar"] [role="radiogroup"] label {
+    padding: 6px 8px;
+    border-radius: 8px;
+}
+
+[data-testid="stSidebar"] [role="radiogroup"] label:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.footer {
+    text-align: center;
+    color: #94A3B8;
+    font-size: 12px;
+    padding: 25px 0 5px;
+}
